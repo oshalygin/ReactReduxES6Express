@@ -1,1 +1,3 @@
-console.log("Hello from Index.js");
+/* eslint-disable no-console */
+
+console.log("Hello from index.js");

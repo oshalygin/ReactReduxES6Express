@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "React with Redux in ES6",
   "scripts": {
-    "start": "babel-node server.js"
+    "prestart": "babel-node utilities/startingDisplayMessage.js",
+    "start": "babel-node server.js",
+    "lint": "node_modules/.bin/esw webpack.config.* src utilities"
   },
   "author": "Oleg Shalygin",
   "license": "MIT",
