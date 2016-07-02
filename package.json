@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "React with Redux in ES6",
   "scripts": {
-
+    "start": "babel-node server.js"
   },
   "author": "Oleg Shalygin",
   "license": "MIT",
