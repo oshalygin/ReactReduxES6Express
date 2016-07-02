@@ -3,9 +3,12 @@
   "globalDependencies": {
     "express": "registry:dt/express#4.0.0+20160317120654",
     "express-serve-static-core": "registry:dt/express-serve-static-core#0.0.0+20160701212727",
+    "history": "registry:dt/history#1.8.0+20160316155526",
     "jasmine": "registry:dt/jasmine#2.2.0+20160621224255",
     "mime": "registry:dt/mime#0.0.0+20160316155526",
     "node": "registry:dt/node#6.0.0+20160621231320",
+    "react": "registry:dt/react#0.14.0+20160630100702",
+    "react-router": "registry:dt/react-router#2.0.0+20160621215300",
     "serve-static": "registry:dt/serve-static#0.0.0+20160606155157"
   }
 }
