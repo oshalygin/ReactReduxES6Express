@@ -4,8 +4,12 @@
   "description": "React with Redux in ES6",
   "scripts": {
     "prestart": "babel-node utilities/startingDisplayMessage.js",
-    "start": "babel-node server.js",
-    "lint": "node_modules/.bin/esw webpack.config.* src utilities"
+    "start": "npm-run-all --parallel open:src lint:watch test:watch",
+    "open:src": "babel-node server.js",
+    "lint": "node_modules/.bin/esw webpack.config.* src utilities",
+    "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --reporter progress utilities/test.loader.js \"test/**/*.spec.js\"",
+    "test:watch": "npm run test -- --watch"
   },
   "author": "Oleg Shalygin",
   "license": "MIT",
