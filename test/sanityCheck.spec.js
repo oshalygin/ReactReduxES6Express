@@ -1,7 +1,7 @@
 import expect from "expect";
 
 describe("Sanity Check", () => {
-    it("Simple mathematicla calculation", () => {
+    it("Simple mathematical calculation", () => {
         const expected = 5;
 
         let firstValue = 3;

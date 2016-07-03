@@ -8,7 +8,7 @@
     "open:src": "babel-node server.js",
     "lint": "node_modules/.bin/esw webpack.config.* src utilities",
     "lint:watch": "npm run lint -- --watch",
-    "test": "mocha --reporter progress utilities/test.loader.js \"test/**/*.spec.js\"",
+    "test": "mocha --reporter spec utilities/test.loader.js \"test/**/*.spec.js\"",
     "test:watch": "npm run test -- --watch"
   },
   "author": "Oleg Shalygin",

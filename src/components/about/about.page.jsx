@@ -4,7 +4,7 @@ class AboutPage extends React.Component {
     render() {
         return (
             <div>
-                <h3>About</h3>
+                <h4>About</h4>
                 <p>This application uses React with Redux in ES6 along with all sorts of other libraries such as: </p>
                 <ul>
                     <li>ExpressJs</li>
