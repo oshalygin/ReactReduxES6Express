@@ -4,11 +4,13 @@ import { render } from "react-dom";
 import configureStore from "./store/configure.store";
 import { Router, browserHistory } from "react-router";
 import { Provider } from "react-redux";
+import { loadCourses } from "./actions/course.actions";
 import routes from "./routes.js";
 import "./styles/styles.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 const store = configureStore();
+store.dispatch(loadCourses());
 
 render(
     <Provider store={store}>
