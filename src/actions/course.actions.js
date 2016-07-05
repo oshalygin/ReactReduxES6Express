@@ -12,14 +12,14 @@ export function createdCourseSuccess(course) {
     return {
         type: actionTypes.CREATE_COURSE_SUCCESS,
         course
-    }
+    };
 }
 
 export function updatedCourseSuccess(course) {
     return {
         type: actionTypes.UPDATED_COURSE_SUCCES,
         course
-    }
+    };
 }
 
 export function loadCourses() {
@@ -41,6 +41,6 @@ export function saveCourse(course) {
                     : dispatch(createdCourseSuccess(savedCourse));
 
             })
-            .catch(error => { throw (error) });
+            .catch(error => { throw (error); });
     };
 }

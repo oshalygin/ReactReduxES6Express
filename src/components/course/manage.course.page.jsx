@@ -19,6 +19,12 @@ class ManageCoursePage extends React.Component {
         this.saveCourse = this.saveCourse.bind(this);
     }
 
+    componentWillReceiveProps(newProps) {
+        if (this.props.course.id !== newProps.course.id) {
+            this.setState({ course: Object.assign({}, newProps.course) });
+        }
+    }
+
     updateCourseState(event) {
         const field = event.target.name;
         let course = this.state.course;
@@ -70,6 +76,11 @@ function mapStateToProps(state, ownProps) {
         length: '',
         category: ''
     };
+
+    if (!!ownProps.routeParams.id) {
+        let courseExists = state.courses.find(course => course.id === ownProps.routeParams.id);
+        course = !!courseExists ? courseExists : course;
+    }
 
     const authorsFormattedForDropDownList = state.authors.map(author => {
         return {
