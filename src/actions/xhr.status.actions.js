@@ -5,3 +5,9 @@ export function beginXhrCall() {
         type: actionTypes.BEGIN_XHR_CALL
     };
 }
+
+export function xhrCallError() {
+    return {
+        type: actionTypes.XHR_CALL_ERROR
+    };
+}

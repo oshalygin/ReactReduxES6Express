@@ -1,6 +1,7 @@
 import React, { PropTypes } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import toastr from "toastr";
 import * as courseActions from "../../actions/course.actions";
 import * as authorActions from "../../actions/author.actions";
 import CourseForm from "./course.form.jsx";
@@ -38,11 +39,16 @@ class ManageCoursePage extends React.Component {
         event.preventDefault();
         this.setState({ saving: true });
         this.props.actions.saveCourse(this.state.course)
-            .then(()=> this.redirect());
+            .then(() => this.redirect())
+            .catch((error) => {
+                toastr.error(error);
+                this.setState({ saving: false });
+            });
     }
 
     redirect() {
         this.setState({ saving: false });
+        toastr.success("Saved!", "Course Update");
         this.context.router.push("/courses");
     }
 

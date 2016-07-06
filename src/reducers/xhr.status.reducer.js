@@ -3,7 +3,8 @@ import initialState from "./initialState";
 
 function actionTypeContainsSuccess(actionType) {
     const successSearch = "SUCCESS";
-    return actionType.includes(successSearch);
+    const errorSearch = "ERROR";
+    return actionType.includes(successSearch) || actionType.includes(errorSearch);
 }
 
 export default function xhrStatusReducer(state = initialState.numberOfXHRCallsInProgress, action) {
