@@ -18,7 +18,7 @@ export function createdCourseSuccess(course) {
 
 export function updatedCourseSuccess(course) {
     return {
-        type: actionTypes.UPDATED_COURSE_SUCCES,
+        type: actionTypes.UPDATED_COURSE_SUCCESS,
         course
     };
 }
@@ -43,7 +43,6 @@ export function saveCourse(course) {
                 course.id
                     ? dispatch(updatedCourseSuccess(savedCourse))
                     : dispatch(createdCourseSuccess(savedCourse));
-
             })
             .catch(error => { throw (error); });
     };

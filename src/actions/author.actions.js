@@ -11,7 +11,7 @@ export function loadAllAuthorsSuccess(authors) {
 
 export function loadAuthors() {
     return function (dispatch) {
-        dispatch(beginXhrCall);
+        dispatch(beginXhrCall());
         return AuthorApi.getAllAuthors()
             .then(authors => {
                 dispatch(loadAllAuthorsSuccess(authors));
