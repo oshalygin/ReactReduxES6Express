@@ -12,11 +12,12 @@ export default function courseReducer(state = initialState.courses, action) {
             ];
         case actionTypes.UPDATED_COURSE_SUCCES:
             {
-                let existingCourseIndex = state.findIndex(course => course.id === action.course.id);
-                state.splice(existingCourseIndex, 1, Object.assign({}, action.course));
+                let updatedCourse = [...state];
+                let existingCourseIndex = updatedCourse.findIndex(course => course.id === action.course.id);
+                updatedCourse.splice(existingCourseIndex, 1, Object.assign({}, action.course));
 
                 return [
-                    ...state
+                    ...updatedCourse
                 ];
             }
         default:

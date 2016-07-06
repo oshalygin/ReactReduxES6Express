@@ -1,5 +1,6 @@
 import CourseApi from "../api/mock.course.api";
 import * as actionTypes from "./action.types";
+import {beginXhrCall} from "./xhr.status.actions";
 
 export function loadCoursesSuccess(courses) {
     return {
@@ -22,8 +23,10 @@ export function updatedCourseSuccess(course) {
     };
 }
 
+
 export function loadCourses() {
     return function (dispatch) {
+        dispatch(beginXhrCall());
         return CourseApi.getAllCourses()
             .then(courses => {
                 dispatch(loadCoursesSuccess(courses));
@@ -34,6 +37,7 @@ export function loadCourses() {
 
 export function saveCourse(course) {
     return function (dispatch) {
+        dispatch(beginXhrCall());
         return CourseApi.saveCourse(course)
             .then(savedCourse => {
                 course.id
