@@ -7,7 +7,7 @@ import * as authorActions from "../../actions/author.actions";
 import CourseForm from "./course.form.jsx";
 
 
-class ManageCoursePage extends React.Component {
+export class ManageCoursePage extends React.Component {
     constructor(props, context) {
         super(props, context)
 
@@ -20,12 +20,25 @@ class ManageCoursePage extends React.Component {
         this.updateCourseState = this.updateCourseState.bind(this);
         this.saveCourse = this.saveCourse.bind(this);
         this.redirect = this.redirect.bind(this);
+        // this.courseFormIsValid = this.courseFormIsValid.bind(this);
     }
 
     componentWillReceiveProps(newProps) {
         if (this.props.course.id !== newProps.course.id) {
             this.setState({ course: Object.assign({}, newProps.course) });
         }
+    }
+
+    courseFormIsValid() {
+        let formIsValid = true;
+        let errors = {};
+
+        if (this.state.course.title.length < 5) {
+            errors.title = "Title must be at least 5 characters long";
+            formIsValid = false;
+            this.setState({ errors: errors });
+        }
+        return formIsValid;
     }
 
     updateCourseState(event) {
@@ -37,6 +50,11 @@ class ManageCoursePage extends React.Component {
 
     saveCourse(event) {
         event.preventDefault();
+
+        if (!this.courseFormIsValid()) {
+            return;
+        }
+
         this.setState({ saving: true });
         this.props.actions.saveCourse(this.state.course)
             .then(() => this.redirect())
@@ -48,6 +66,7 @@ class ManageCoursePage extends React.Component {
 
     redirect() {
         this.setState({ saving: false });
+
         toastr.success("Saved!", "Course Update");
         this.context.router.push("/courses");
     }
