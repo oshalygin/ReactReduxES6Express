@@ -8,7 +8,8 @@ function setup(loading) {
     let props = {
         course: {},
         loading: loading,
-        errors: {}
+        errors: {},
+        allAuthors: []
     };
 
     let onSave = () => { };
