@@ -1,7 +1,8 @@
+/* eslint-disable no-console */
 import express from "express";
 import webpack from "webpack";
 import path from "path";
-import config from "./webpack.config.dev";
+import config from "../webpack.config.dev";
 import open from "open";
 
 const port = 9000;
@@ -21,7 +22,7 @@ application.get("*", (request, response) => {
 });
 
 application.listen(port, (error) => {
-    if (!!error) {
+    if (error) {
         console.log(error);
         return;
     }
