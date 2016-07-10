@@ -1,8 +1,7 @@
 {
     "compilerOptions": {
-        "target": "ES6",
-        "allowSyntheticDefaultImports": true,
-        "module": "es2015"
+        "target": "es2015",
+        "allowSyntheticDefaultImports": true
     },
     "exclude": [
         "node_modules"

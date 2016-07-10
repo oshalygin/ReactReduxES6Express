@@ -14,7 +14,7 @@ describe("Author Selectors", () => {
                 id: "carlota-turcios",
                 firstName: "Carlota",
                 lastName: "Turcios"
-            },
+            }
         ];
         let expected = [
             { text: "Oleg Shalygin", value: "oleg-shalygin" },
@@ -24,5 +24,5 @@ describe("Author Selectors", () => {
         let actual = authorsFormattedForDropdown(authors);
 
         expect(actual).toEqual(expected);
-    })
+    });
 });
