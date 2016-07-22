@@ -5,7 +5,7 @@
   "scripts": {
     "prestart": "babel-node utilities/startingDisplayMessage.js",
     "start": "npm-run-all --parallel open:src lint:watch test:watch",
-    "open:src": "babel-node server.js",
+    "open:src": "babel-node utilities/src.server.js",
     "lint": "node_modules/.bin/esw webpack.config.* src utilities",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter spec utilities/test.loader.js \"src/**/*.spec.js\"",
